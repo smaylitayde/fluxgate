@@ -1,0 +1,10 @@
+{
+  "description": "Generates fully functional websites from user prompts, enabling quick and easy web development for designers and businesses without coding skills.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

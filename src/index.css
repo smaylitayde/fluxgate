@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-bg: #090c10;
+  --color-surface: #0f1318;
+  --color-card: #131820;
+  --color-card-alt: #161d26;
+  --color-border: #1e2730;
+  --color-border-subtle: #151c24;
+  --color-text: #e8edf2;
+  --color-text-muted: #6b7a8d;
+  --color-text-dim: #3d4a58;
+  --color-cyan: #00d4ff;
+  --color-cyan-dim: rgba(0, 212, 255, 0.12);
+  --color-cyan-glow: rgba(0, 212, 255, 0.06);
+  --color-amber: #f59e0b;
+  --color-amber-dim: rgba(245, 158, 11, 0.12);
+  --color-green: #10b981;
+  --color-green-dim: rgba(16, 185, 129, 0.12);
+  --color-red: #ef4444;
+  --color-red-dim: rgba(239, 68, 68, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e2730;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3542;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes flow-line {
+  0% { stroke-dashoffset: 100; }
+  100% { stroke-dashoffset: 0; }
+}
+
+@keyframes ticker {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes scan-line {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.15), 0 0 60px rgba(0, 212, 255, 0.05);
+}
+
+.glow-cyan-text {
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+.hairline {
+  border: 1px solid var(--color-border);
+}
+
+.hairline-t {
+  border-top: 1px solid var(--color-border);
+}
+.hairline-b {
+  border-bottom: 1px solid var(--color-border);
+}
+.hairline-l {
+  border-left: 1px solid var(--color-border);
+}
+.hairline-r {
+  border-right: 1px solid var(--color-border);
+}
+
+.card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+}
+
+.surface {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.btn-primary {
+  background: var(--color-cyan);
+  color: #000;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.02em;
+}
+.btn-primary:hover {
+  background: #33dcff;
+  box-shadow: 0 0 24px rgba(0, 212, 255, 0.3);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  padding: 0.5rem 1.25rem;
+  border-radius: 4px;
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.02em;
+}
+.btn-ghost:hover {
+  border-color: #2a3542;
+  color: var(--color-text);
+  background: var(--color-card-alt);
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.tag-cyan {
+  background: var(--color-cyan-dim);
+  color: var(--color-cyan);
+  border: 1px solid rgba(0, 212, 255, 0.2);
+}
+
+.tag-amber {
+  background: var(--color-amber-dim);
+  color: var(--color-amber);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.tag-green {
+  background: var(--color-green-dim);
+  color: var(--color-green);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.tag-red {
+  background: var(--color-red-dim);
+  color: var(--color-red);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.metric-huge {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.metric-large {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.recharts-tooltip-wrapper {
+  outline: none !important;
+}
+
+.recharts-default-tooltip {
+  background: #1a2230 !important;
+  border: 1px solid #1e2730 !important;
+  border-radius: 4px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem !important;
+  color: var(--color-text) !important;
+}
